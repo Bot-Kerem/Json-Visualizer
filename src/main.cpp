@@ -35,9 +35,8 @@ int main(int argc, char const *argv[])
     ImGui_ImplGlfw_InitForOpenGL(window, true);
     ImGui_ImplOpenGL3_Init("#version 330 compatibility");
 
-    vson::Visualizer vis{};
-    vis.print();
-    
+    vson::Visualizer vis{R"({"Age": 20, "Name": "colin", "a": {"I": 12, "D": 31}, "CC":{}})"};
+
     glClearColor(0.31f, 0.31f, 0.31f, 1.0f);
     while (!glfwWindowShouldClose(window))
     {
@@ -62,7 +61,7 @@ int main(int argc, char const *argv[])
 
         ImGui::EndMainMenuBar();
 
-        ImGui::ShowDemoWindow();
+        vis.Visualize();
 
         ImGui::Render();
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());

@@ -21,6 +21,6 @@ add_library(${PROJECT_NAME} vson.cpp)
 
 find_package(OpenGL)
 
-target_link_libraries(${PROJECT_NAME} imgui OpenGL::GL)
+target_link_libraries(${PROJECT_NAME} imgui OpenGL::GL jsoncpp)
 
 target_include_directories(${PROJECT_NAME} PUBLIC ../third_party/imgui ../third_party/imgui/backends ../include)
